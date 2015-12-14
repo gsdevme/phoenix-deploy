@@ -20,7 +20,7 @@ if node['phoenix']['vhosts'] && node['phoenix']['user'] && node['phoenix']['grou
                 "/var/www/#{vhost}/shared/#{app}/spool",
                 "/var/www/#{vhost}/shared/#{app}/spool/default",
                 "/var/www/#{vhost}/shared/#{app}/generated_images",
-                "/var/www/#{vhost}/shared/#{app}/data_exchange",
+                "/var/www/#{vhost}/shared/#{app}/dataexchange",
                 "/var/www/#{vhost}/shared/#{app}/logs",
                 "/var/www/#{vhost}/shared/#{app}/cache",
             ].each do |folder|

@@ -36,7 +36,6 @@ if node['phoenix']['vhosts'] && node['phoenix']['user'] && node['phoenix']['grou
 
         node['phoenix']['apps'].each do |app|
             [
-                "/var/www/#{vhost}/shared/#{app}",
                 "/var/www/#{vhost}/shared/#{app}/spool",
                 "/var/www/#{vhost}/shared/#{app}/spool/default",
                 "/var/www/#{vhost}/shared/#{app}/logs",

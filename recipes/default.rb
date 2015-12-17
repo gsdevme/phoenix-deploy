@@ -24,6 +24,7 @@ if node['phoenix']['vhosts'] && node['phoenix']['user'] && node['phoenix']['grou
                 "/var/www/#{vhost}/shared/#{app}/dataexchange",
                 "/var/www/#{vhost}/shared/#{app}/logs",
                 "/var/www/#{vhost}/shared/#{app}/cache",
+                "/var/www/#{vhost}/shared/cached-copy",
             ].each do |folder|
                 directory folder do
                   owner node['phoenix']['user']

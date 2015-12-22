@@ -39,12 +39,30 @@ if node['phoenix']['vhosts'] && node['phoenix']['user'] && node['phoenix']['grou
         node['phoenix']['apps'].each do |app|
             [
                 "/var/www/#{vhost}/shared/#{app}/spool",
-                "/var/www/#{vhost}/shared/#{app}/spool/default",
                 "/var/www/#{vhost}/shared/#{app}/logs",
             ].each do |folder|
                 directory folder do
                   owner node['phoenix']['user']
                   group node['phoenix']['group']
+                  mode "775"
+                  recursive true
+                  action :create
+                end
+
+                execute "setfacl #{app}" do
+                  command "setfacl -dR -m u:#{node['phoenix']['user']}:rwX -m u:nginx:rwX #{folder}"
+                  action :run
+                end
+            end
+        end
+        
+        node['phoenix']['apps'].each do |app|
+            [
+                "/var/www/#{vhost}/shared/#{app}/spool/default",
+            ].each do |folder|
+                directory folder do
+                  owner node['phoenix']['user']
+                  group "nginx"
                   mode "775"
                   recursive true
                   action :create

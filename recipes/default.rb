@@ -1,3 +1,5 @@
+package 'acl'
+
 if node['phoenix']['vhosts'] && node['phoenix']['user'] && node['phoenix']['group']
     node['phoenix']['vhosts'].each do |vhost|
         [

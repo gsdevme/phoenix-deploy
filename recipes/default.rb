@@ -10,7 +10,7 @@ if node['phoenix']['vhosts'] && node['phoenix']['user'] && node['phoenix']['grou
             directory folder do
               owner node['phoenix']['user']
               group node['phoenix']['group']
-              mode "775"
+              mode "774"
               recursive true
               action :create
             end
@@ -31,7 +31,7 @@ if node['phoenix']['vhosts'] && node['phoenix']['user'] && node['phoenix']['grou
                 directory folder do
                   owner node['phoenix']['user']
                   group node['phoenix']['group']
-                  mode "775"
+                  mode "774"
                   recursive true
                   action :create
                 end
@@ -46,7 +46,7 @@ if node['phoenix']['vhosts'] && node['phoenix']['user'] && node['phoenix']['grou
                 directory folder do
                   owner node['phoenix']['user']
                   group node['phoenix']['group']
-                  mode "775"
+                  mode "774"
                   recursive true
                   action :create
                 end
@@ -65,7 +65,7 @@ if node['phoenix']['vhosts'] && node['phoenix']['user'] && node['phoenix']['grou
                 directory folder do
                   owner node['phoenix']['user']
                   group "nginx"
-                  mode "775"
+                  mode "774"
                   recursive true
                   action :create
                 end
